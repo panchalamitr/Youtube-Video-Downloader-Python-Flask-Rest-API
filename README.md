@@ -16,7 +16,7 @@ now result is like below,
 
 https://www.youtube.com/watch?v=tf0vkRUlRms
 
-Now, it uses [pytube](https://github.com/pytube/pytube) to get it's title and video download url.
+Now, we will use above result and pass it to [pytube](https://github.com/pytube/pytube), to get youtube video's title and video download url.
 
 ```
 yt = YouTube(url).streams.filter(progressive=True,file_extension='mp4').order_by('resolution').desc().first()
