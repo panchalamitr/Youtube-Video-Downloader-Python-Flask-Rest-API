@@ -6,15 +6,17 @@ For example below is the request url from client side.
 
 http://localhost:8080/youtube?url=https://www.youtube.com/watch?v=tf0vkRUlRms
 
-Here, by usign below python code, we can extract Youtube Video URL,
+Here, by usign below python code, we can extract "url" value,
 
 ```
 url = request.args.get('url')
 ```
 
-now extracted Url is https://www.youtube.com/watch?v=tf0vkRUlRms
+now result is like below,
 
-and then it uses [pytube](https://github.com/pytube/pytube) to get it's title and video download url.
+https://www.youtube.com/watch?v=tf0vkRUlRms
+
+Now, it uses [pytube](https://github.com/pytube/pytube) to get it's title and video download url.
 
 ```
 yt = YouTube(url).streams.filter(progressive=True,file_extension='mp4').order_by('resolution').desc().first()
